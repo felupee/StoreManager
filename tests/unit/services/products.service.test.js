@@ -30,4 +30,14 @@ describe('Testes de unidade de service de produtos', function () {
     expect(result.status).to.equal(null);
     expect(result.message).to.deep.equal(products.products[0]);
   });
+
+  it('retorna o ID do produto cadastrado', async function () {
+    sinon.stub(productsModel, 'insert').resolves([{ insertId: 1 }]);
+    sinon.stub(productsModel, 'findById').resolves(products.products[0]);
+
+    const result = await productService.createProduct(products.validName);
+
+    expect(result.type).to.equal(201);
+    expect(result.message).to.deep.equal(products.products[0]);
+  });
 });

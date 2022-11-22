@@ -13,6 +13,19 @@ const products = [
   }
 ];
 
+const invalidValue = {
+  name: 'a'
+};
+
+const productMock = {
+  name: 'Teclado',
+};
+
+const newProductMock = { id: 1, ...productMock };
+
 module.exports = {
   products,
+  productMock,
+  invalidValue,
+  newProductMock,
 };

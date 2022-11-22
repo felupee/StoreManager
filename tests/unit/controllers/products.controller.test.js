@@ -45,4 +45,37 @@ describe('Testes de unidade do model de produtos', function () {
     expect(res.status).to.have.been.calledWith(200);
     expect(res.json).to.have.been.calledWith(products.products[0]);
   });
+
+  it('Cadastrando uma nova pessoa passageira com sucesso', async function () {
+    const res = {};
+    const req = {
+      body: products.productMock,
+    };
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    sinon
+      .stub(productService, 'createProduct')
+      .resolves({ type: null, message: products.newProductMock });
+
+    await productController.createProduct(req, res);
+
+    expect(res.status).to.have.been.calledWith(null);
+    expect(res.json).to.have.been.calledWith(products.newProductMock);
+  });
+
+  // it('retorna um erro ao passar um nome inválido', async function () {
+  //   const res = {};
+  //   const req = {
+  //     body: products.invalidValue,
+  //   };
+
+  //   res.status = sinon.stub().returns(res);
+  //   res.json = sinon.stub().returns();
+
+  //   await productController.createProduct(req, res);
+
+  //   expect(res.status).to.have.been.calledWith(400);
+  //   expect(res.json).to.have.been.calledWith('"name" is required');
+  // });
 });

@@ -8,11 +8,11 @@ const products = require('./mock/products.model.mock');
 describe('Testes de unidade do model de produtos', function () {
   afterEach(sinon.restore);
 
-  // it('Cadastrando um produto', async function () {
-  //   sinon.stub(connection, 'execute').resolves([{ insertId: 42 }]);
-  //   const result = await passengerModel.insert(newPassenger);
-  //   expect(result).to.equal(42);
-  // });
+  it('Cadastrando um produto', async function () {
+    sinon.stub(connection, 'execute').resolves([{ insertId: 42 }]);
+    const result = await productsModel.insert(products.newProduct);
+    expect(result).to.equal(42);
+  });
 
   it('exibindo a lista de produtos', async function () {
     sinon.stub(connection, 'execute').resolves([products]);

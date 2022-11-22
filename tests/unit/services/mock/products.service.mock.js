@@ -13,6 +13,9 @@ const products = [
   }
 ];
 
+const validName = 'Bruce Lane';
+
 module.exports = {
   products,
+  validName,
 };
