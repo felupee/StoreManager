@@ -18,7 +18,6 @@ const findById = async (productId) => {
 };
 
 const insert = async (product) => {
-  console.log('model', product);
   const [{ insertId }] = await connection.execute(
     'INSERT INTO StoreManager.products (name) VALUES (?)',
     [product],
@@ -27,9 +26,9 @@ const insert = async (product) => {
   console.log('insertir model', insertId);
   return insertId;
 };
-  
-  module.exports = {
-    findAll,
-    findById,
-    insert,
-  };
+
+module.exports = {
+  findAll,
+  findById,
+  insert,
+};
