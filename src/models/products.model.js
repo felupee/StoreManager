@@ -1,4 +1,5 @@
 const camelize = require('camelize');
+// const snakeize = require('snakeize');
 const connection = require('./connection');
 
 const findAll = async () => {
@@ -15,8 +16,20 @@ const findById = async (productId) => {
     );
     return camelize(result);
 };
+
+const insert = async (product) => {
+  console.log('model', product);
+  const [{ insertId }] = await connection.execute(
+    'INSERT INTO StoreManager.products (name) VALUES (?)',
+    [product],
+    );
+    
+  console.log('insertir model', insertId);
+  return insertId;
+};
   
   module.exports = {
     findAll,
     findById,
+    insert,
   };
