@@ -9,8 +9,6 @@ describe('Testes de unidade do model de vendas', function () {
   afterEach(sinon.restore);
   it('venda foi cadastrada com sucesso', async function () {
     sinon.stub(connection, 'execute').resolves([[{ lastId: 2}]]);
-
-
     // const result = await Promise.all(sales.newSale.map(async (sale) => salesModel.createSale(4, sale)));
     const result = await salesModel.createSale(sales.newSale)
     expect(result).to.be.deep.equal(3);
