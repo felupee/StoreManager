@@ -42,8 +42,37 @@ const findByIdValidate = async (productId) => {
   return camelize(result);
 };
 
+const findAll = async () => {
+  const [sales] = await connection.execute(
+    ` SELECT sales_products.sale_id as saleId,
+    sales.date,
+    sales_products.product_id as productId,
+    sales_products.quantity
+    FROM sales_products
+    INNER JOIN sales
+    ON sales.id = sales_products.sale_id
+    ORDER BY sales_products.sale_id, sales_products.product_id;`,
+  );
+
+  return sales;
+};
+
+const findById2 = async (id) => {
+  const [sale] = await connection.execute(
+    ` SELECT sales.date, sales_products.product_id as productId, sales_products.quantity
+    FROM sales_products
+    INNER JOIN sales ON sales.id = sales_products.sale_id
+    WHERE sales_products.sale_id = ?
+    ORDER BY sales_products.sale_id, sales_products.product_id`,
+    [id],
+  );
+  return sale;
+};
+
 module.exports = {
   createSale,
   findById,
   findByIdValidate,
+  findAll,
+  findById2,
 };

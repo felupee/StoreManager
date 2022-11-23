@@ -18,6 +18,21 @@ const createSale = async (sales) => {
   return { type: 201, message: retorno };
 };
 
+const findAll = async () => {
+  const passengers = await saleModel.findAll();
+  return { type: 200, message: passengers };
+};
+
+const findById = async (saleId) => {
+  const sale = await saleModel.findById2(saleId);
+  console.log('sale teste', sale);
+  if (sale.length >= 1) return { type: 200, message: sale };
+  const b = { message: 'Sale not found' };
+  return { type: 404, message: b };
+};
+
 module.exports = {
   createSale,
+  findAll,
+  findById,
 };
