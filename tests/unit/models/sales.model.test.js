@@ -7,9 +7,8 @@ const sales = require('./mock/sales.model.mock');
 
 describe('Testes de unidade do model de vendas', function () {
   afterEach(sinon.restore);
-  it('venda foi cadastrada com sucesso', async function () {
+  it('testando o cadastro de vendas', async function () {
     sinon.stub(connection, 'execute').resolves([[{ lastId: 2}]]);
-    // const result = await Promise.all(sales.newSale.map(async (sale) => salesModel.createSale(4, sale)));
     const result = await salesModel.createSale(sales.newSale)
     expect(result).to.be.deep.equal(3);
   });
@@ -20,9 +19,15 @@ describe('Testes de unidade do model de vendas', function () {
   //   expect(result).to.be.deep.equal(products);
   // });
 
-  // it('Recuperando um produto a partir do seu id', async function () {
-  //   sinon.stub(connection, 'execute').resolves([[products.products[0]]]);
-  //   const result = await productsModel.findById(1);
-  //   expect(result).to.be.deep.equal(products.products[0]);
-  // });
+  it('Recuperando um produto a partir do seu id', async function () {
+    sinon.stub(connection, 'execute').resolves([[sales.returnSales]]);
+    const result = await salesModel.findById(4);
+    expect(result).to.be.deep.equal([sales.returnSales]);
+  });
+
+  it('Verificando a função de validação', async function () {
+    sinon.stub(connection, 'execute').resolves([[sales.testeValide]]);
+    const result = await salesModel.findByIdValidate(1);
+    expect(result).to.be.deep.equal(sales.testeValide);
+  });
 });

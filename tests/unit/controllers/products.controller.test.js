@@ -46,7 +46,7 @@ describe('Testes de unidade do model de produtos', function () {
     expect(res.json).to.have.been.calledWith(products.products[0]);
   });
 
-  it('Cadastrando uma nova pessoa passageira com sucesso', async function () {
+  it('Cadastrando um novo produto com sucesso', async function () {
     const res = {};
     const req = {
       body: products.productMock,
