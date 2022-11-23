@@ -3,8 +3,10 @@ const validate = require('./validate');
 
 const createSale = async (sales) => {
   const valida = await validate.productExist(sales);
+  console.log('valida', valida);
+  const a = { message: 'Product not found' };
   if (!valida) {
-    return { type: 404, message: 'Product not found' };
+    return { type: 404, message: a };
   }
   const newSaleId = await saleModel.createSale(sales);
   const newSale = await saleModel.findById(newSaleId);

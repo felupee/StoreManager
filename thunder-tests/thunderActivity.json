@@ -88,12 +88,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-11-22T13:48:50.759Z",
-    "modified": "2022-11-22T23:09:25.031Z",
+    "modified": "2022-11-23T12:52:35.586Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 13,\n    \"quantity\": 6\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 2\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 6\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 2\n  }\n]",
       "form": []
     },
     "tests": []

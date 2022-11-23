@@ -9,9 +9,9 @@ describe('Testes de unidade do model de produtos', function () {
   afterEach(sinon.restore);
 
   it('Cadastrando um produto', async function () {
-    sinon.stub(connection, 'execute').resolves([{ insertId: 42 }]);
+    sinon.stub(connection, 'execute').resolves([{ insertId: 1 }]);
     const result = await productsModel.insert(products.newProduct);
-    expect(result).to.equal(42);
+    expect(result).to.equal(1);
   });
 
   it('exibindo a lista de produtos', async function () {
