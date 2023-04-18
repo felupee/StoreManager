@@ -1,9 +1,9 @@
 #<p align="center">
-  <img src="">
+  <img src="https://user-images.githubusercontent.com/94487469/232917084-3b73e9f3-aa4d-42ab-a153-c85d6fa4e575.png">
 </p>
 
 
-Olá, seja bem vindo ao repositório do projeto Store Manager! Aqui você irá aprender como instalar e testar esse projeto na sua máquina, mas caso queira uma explicação mais detalhada sobre o Store Manager e suas funcionalidades, sem precisar baixar e executar o projeto, recomendo você a visitar meu portifólio clicando [aqui](https://felupee.github.io/back-end/projetos/talker-manager/talker-manager.html).
+Olá, seja bem vindo ao repositório do projeto Store Manager! Aqui você irá aprender como instalar e testar esse projeto na sua máquina, mas caso queira uma explicação mais detalhada sobre o Store Manager e suas funcionalidades, sem precisar baixar e executar o projeto, recomendo você a visitar esse mesmo projeto no meu portifólio clicando [aqui](https://felupee.github.io/back-end/projetos/talker-manager/talker-manager.html).
 
 ## Como usar :computer: :rocket: 
 
