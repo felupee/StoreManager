@@ -1,4 +1,4 @@
-#<p align="center">
+<p align="center">
   <img src="https://user-images.githubusercontent.com/94487469/232917084-3b73e9f3-aa4d-42ab-a153-c85d6fa4e575.png">
 </p>
 
