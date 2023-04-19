@@ -45,7 +45,7 @@ Observe abaixo o Diagrama de Entidade-Relacionamento do banco que você acabou d
 
 <img src="https://user-images.githubusercontent.com/94487469/232912321-8cc7c6e2-3acd-45b2-b8ac-ad110551a406.png">
 
-Com o banco criando e populado, basta rodar o comando `npm start` para o server ficar online e você poder fazer requisições a vontade
+Com o banco criado e populado, basta rodar o comando `npm start` para o server ficar online e você poder fazer requisições a vontade
 
 ### Execução :runner:
 
